@@ -1,0 +1,138 @@
+/**
+ * business network definition.
+ */
+
+ /**
+ * Author : Amandeep Singh : singham@us.ibm.com
+ */
+
+
+namespace org.gsc.roaming
+
+asset rs identified by publickey {
+  o String publickey
+	o String msisdn
+	o String address
+	--> CSP ho
+	--> CSP rp
+	o String roaming
+	o String location
+	o String lat
+	o String long
+	o String ratetype
+  o String flag
+}
+
+
+participant CSP identified by name {
+  o String name
+  o String region
+}
+
+transaction Test{
+  --> rs asset
+  o String custname
+}
+
+transaction discovery{
+  --> rs asset
+  --> CSP rp
+	o String location
+	o String lat
+	o String long
+  o String transtype
+}
+
+transaction authentication{
+  --> rs asset
+  --> CSP rp
+  o String transtype
+  o String roaming
+  o String flag
+}
+
+transaction updaterate{
+  --> rs asset
+  --> CSP rp
+  o String ratetype
+  o String transtype
+}
+
+transaction callout{
+  --> rs asset
+  --> CSP rp
+	o String destination
+  o String transtype
+}
+
+transaction overagecheck{
+  --> rs asset
+  --> CSP rp
+  o String transtype
+  o String flag
+}
+
+transaction callend{
+  --> rs asset
+  --> CSP rp
+	o String duration
+  o String transtype
+}
+
+transaction callpay{
+  --> rs asset
+  --> CSP rp
+	o String charges
+  o String transtype
+}
+
+transaction resetCSP{
+o String noneed
+}
+
+transaction resetMSISDN{
+o String noneed
+}
+
+transaction removeMSISDN{
+ o String noneed
+}
+
+transaction addUser{
+ o String noneed
+}
+
+event move {
+  --> rs asset
+}
+
+event authent {
+  --> rs asset
+}
+
+event setrate {
+  --> rs asset
+}
+
+event callo {
+  --> rs asset
+}
+
+event calle {
+  --> rs asset
+}
+
+event callp {
+  --> rs asset
+}
+
+event overagec {
+  --> rs asset
+}
+
+
+event testEvent {
+   --> rs asset
+  o String donor
+  o String recp
+}

@@ -1,0 +1,38 @@
+ /**
+ * Author : Amandeep Singh : singham@us.ibm.com
+ */
+ /**
+ * Access control rules for mynetwork
+ */
+/*rule Default {
+    description: "Allow all participants access to all resources"
+    participant: "ANY"
+    operation: ALL
+    resource: "org.gsc.roaming.*"
+    action: ALLOW
+}*/
+
+rule EverybodyCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "org.gsc.roaming.CSP"
+    operation: READ
+    resource: "org.gsc.roaming.*"
+    action: ALLOW
+}
+
+rule EverybodyCanSubmitTransactions {
+    description: "Allow all participants to submit transactions"
+    participant: "org.gsc.roaming.CSP"
+    operation: CREATE
+    resource: "org.gsc.roaming.Test"
+    action: ALLOW
+}
+
+rule OwnerHasFullAccessToTheirAssets {
+    description: "Allow all participants full access to their assets"
+    participant(p): "org.gsc.roaming.CSP"
+    operation: ALL
+    resource(r): "org.gsc.roaming.rs"
+    condition: (r.ho.getIdentifier() === p.getIdentifier() || r.rp.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
