@@ -115,21 +115,15 @@ You should see the following output :
 Open [Composer Playground](http://composer-playground.mybluemix.net/), by default the Basic Sample Network is imported.
 If you have previously used Playground, be sure to clear your browser local storage by running `localStorage.clear()` in your browser Console.
 
-Now import the `food-supply.bna` file and click on deploy button.
-<p align="center">
-  <img width="100" height="50" src="images/importbtn.png">
-</p>
+Now import the `my-network.bna` file and click on deploy button.
 
->You can also setup [Composer Playground locally](https://hyperledger.github.io/composer/installing/using-playground-locally.html).
+You can also setup [Composer Playground locally](https://hyperledger.github.io/composer/installing/using-playground-locally.html).
 
-You will see the following:
-<p align="center">
-  <img width="400" height="200" src="images/composerplayground.png">
-</p>
+Once the bna is deployed , go to the test tab
 
 To test your Business Network Definition, first click on the **Test** tab:
 
-Create CSPs using transaction 'resetCSP'
+Create CSPs using transaction `resetCSP`
 
 ```
 Model:
@@ -150,7 +144,7 @@ Example Value:
 
 ```
 
-Create Subscribers using transaction 'resetMSISDN '
+Create Subscribers using transaction `resetMSISDN`
 ```
 Model:
 resetMSISDN {
@@ -172,7 +166,8 @@ Example Value:
 
 Scenario 1 : 
 
-execute transaction 'discovery ' 
+execute transaction `discovery`
+```
 {
   "$class": "org.gsc.roaming.discovery",
   "asset": "string",
@@ -184,9 +179,10 @@ execute transaction 'discovery '
   "transactionId": "string",
   "timestamp": "2017-10-05T07:24:24.724Z"
 }
+```
 
-
-execute transaction 'authentication ' 
+execute transaction `authentication`
+```
 {
   "$class": "org.gsc.roaming.authentication",
   "asset": "string",
@@ -197,8 +193,10 @@ execute transaction 'authentication '
   "transactionId": "string",
   "timestamp": "2017-10-05T07:24:24.657Z"
 }
+```
 
-execute transaction 'updaterate' 
+execute transaction `updaterate`
+```
 {
   "$class": "org.gsc.roaming.updaterate",
   "asset": "string",
@@ -208,6 +206,7 @@ execute transaction 'updaterate'
   "transactionId": "string",
   "timestamp": "2017-10-05T07:24:24.811Z"
 }
+```
 
 Similar for other three scenarios.
 
