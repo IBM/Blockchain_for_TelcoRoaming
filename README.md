@@ -112,6 +112,10 @@ You should see the following output :
 ```
 
 ## 2. Deploy the Business Network Archive using Composer Playground
+
+Hyperledger Composer is a programming model containing a modeling language, and a set of APIs to quickly define and deploy business networks and applications that allow participants to send transactions that exchange assets.
+You can experience Hyperledger Composer with the browser-based UI called Hyperledger Composer Playground. Playground is available as a hosted version (no install necessary) or a local install (good for editing and testing sample business networks offline).
+
 Open [Composer Playground](http://composer-playground.mybluemix.net/), by default the Basic Sample Network is imported.
 If you have previously used Playground, be sure to clear your browser local storage by running `localStorage.clear()` in your browser Console.
 
