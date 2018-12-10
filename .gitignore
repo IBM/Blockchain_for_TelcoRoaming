@@ -41,6 +41,7 @@ out
 
 # Mac files.
 **/.DS_Store
+./.vs_code
 
 *.swp
 
@@ -48,3 +49,4 @@ out
 dist
 
 node_modules
+
