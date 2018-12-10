@@ -18,20 +18,20 @@ This business network defines:
 There are four scenarions covered :
 
 1. Roaming Subscriber Identification
-       A subscriber moves to a new location out of home network. Is disvovered by `Roaming Partner`. `discovery` trasaction is executed.
+       A subscriber moves to a new location out of home network. Is discovered by `Roaming Partner`. `discovery` transaction is executed.
        `Roaming Partner` authenticates Roaming Subscriber as a visitor from Home Operator. `authentication` transaction is executed.
        `Home Operator` register Roaming Subscriber accordingly. `updaterate` transaction is executed.
 2. Roaming Subscriber Billing
-     Now that authorized, Roaming Subscriber uses Roaming Partner network to initiate a call. `callout` and `callend` trasactions are executed.
-     The charges for network usage are instantaneously recorded between Home Operator and Roaming Partner based on their agreement. `callpay` trasaction is executed.
+     Now that authorized, Roaming Subscriber uses Roaming Partner network to initiate a call. `callout` and `callend` transactions are executed.
+     The charges for network usage are instantaneously recorded between Home Operator and Roaming Partner based on their agreement. `callpay` transaction is executed.
 3. Fraud Identification
     Addition of a Fraudulent Subscriber is simulated. `addUser` transaction is executed.
-    Fraudulent Subscriber tries to registed to access the Home Operator network using the same MSISDN of an existing user
+    Fraudulent Subscriber tries to registered to access the Home Operator network using the same MSISDN of an existing user
     Authentication step identifies the subscriber and prevent the fraud. `authentication` transaction is executed.
 4. Overage Management
     A roaming subscriber intiates a call/
-    Smart contract recognizes that subscriber is potentially reaching overage threshold. `callout` trasaction is executed.
-    Operator notifies the Overage Subscriber of the potential tariff change.`overagecheck` trasaction is executed.
+    Smart contract recognizes that subscriber is potentially reaching overage threshold. `callout` transaction is executed.
+    Operator notifies the Overage Subscriber of the potential tariff change. `overagecheck` transaction is executed.
 
 
 
@@ -94,7 +94,7 @@ Command succeeded
 The `composer archive create` command has created a file called `my-network.bna` in the `dist` folder.
 
 You can test the business network definition against the embedded runtime that stores the state of 'the blockchain' in-memory in a Node.js process.
-From your project working directory, open the file test/foodTest.js and run the following command:
+From your project working directory, open the file `test/foodTest.js` and run the following command:
 ```
 npm test
 ```
@@ -119,11 +119,11 @@ You can experience Hyperledger Composer with the browser-based UI called Hyperle
 Open [Composer Playground](http://composer-playground.mybluemix.net/), by default the Basic Sample Network is imported.
 If you have previously used Playground, be sure to clear your browser local storage by running `localStorage.clear()` in your browser Console.
 
-Now import the `my-network.bna` file and click on deploy button.
+Now import the `my-network.bna` file and click on `Deploy` button.
 
 You can also setup [Composer Playground locally](https://hyperledger.github.io/composer/installing/using-playground-locally.html).
 
-Once the bna is deployed , go to the test tab
+Once the bna is deployed , go to the `Test` tab
 
 To test your Business Network Definition, first click on the **Test** tab:
 
